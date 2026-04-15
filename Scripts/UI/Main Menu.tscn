@@ -1,12 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://dwmbidq7floxi"]
+[gd_scene format=3 uid="uid://dwmbidq7floxi"]
 
 [ext_resource type="Script" uid="uid://bceaksremaqo5" path="res://Scripts/UI/MainMenu.gd" id="1_wp2d5"]
 [ext_resource type="Texture2D" uid="uid://d1emr6411vte" path="res://Assets/UI/menu.png" id="2_807am"]
 [ext_resource type="FontFile" uid="uid://bp625sncpuuld" path="res://Assets/UI/CustomFontTtf16H30ForPaint.ttf" id="2_p6v0c"]
 [ext_resource type="AudioStream" uid="uid://1b0kl2c8vqnw" path="res://Assets/music_1.wav" id="4_t5vrq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmjo7"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eauue"]
+bg_color = Color(0.654902, 0.552941, 0.568627, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -23,13 +28,8 @@ corner_radius_bottom_left = 16
 shadow_size = 3
 shadow_offset = Vector2(0, 3)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eauue"]
-bg_color = Color(0.654902, 0.552941, 0.568627, 1)
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmjo7"]
+bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -39,7 +39,7 @@ shadow_offset = Vector2(0, 3)
 
 [sub_resource type="Theme" id="Theme_pderx"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=1023692127]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,9 +48,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wp2d5")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2031913190]
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=740614809]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -64,7 +64,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_807am")
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=409168587]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -78,66 +78,66 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 8
 
-[node name="StartGame" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="StartGame" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1399962882]
 layout_mode = 2
-theme_override_colors/font_hover_pressed_color = Color(0.168627, 0.156863, 0.254902, 1)
-theme_override_colors/font_hover_color = Color(0.168627, 0.156863, 0.254902, 1)
 theme_override_colors/font_color = Color(0.168627, 0.156863, 0.254902, 1)
 theme_override_colors/font_focus_color = Color(0.168627, 0.156863, 0.254902, 1)
 theme_override_colors/font_pressed_color = Color(0.168627, 0.156863, 0.254902, 1)
+theme_override_colors/font_hover_color = Color(0.168627, 0.156863, 0.254902, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.168627, 0.156863, 0.254902, 1)
 theme_override_fonts/font = ExtResource("2_p6v0c")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/hover = SubResource("StyleBoxFlat_kmjo7")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_nv8tm")
 theme_override_styles/normal = SubResource("StyleBoxFlat_eauue")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nv8tm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kmjo7")
 text = "Start game"
 
-[node name="Options" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="Options" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=364783116]
 visible = false
 layout_mode = 2
-theme_override_colors/font_hover_pressed_color = Color(0.168627, 0.156863, 0.254902, 1)
-theme_override_colors/font_hover_color = Color(0.168627, 0.156863, 0.254902, 1)
 theme_override_colors/font_color = Color(0.168627, 0.156863, 0.254902, 1)
 theme_override_colors/font_focus_color = Color(0.168627, 0.156863, 0.254902, 1)
 theme_override_colors/font_pressed_color = Color(0.168627, 0.156863, 0.254902, 1)
+theme_override_colors/font_hover_color = Color(0.168627, 0.156863, 0.254902, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.168627, 0.156863, 0.254902, 1)
 theme_override_fonts/font = ExtResource("2_p6v0c")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/hover = SubResource("StyleBoxFlat_kmjo7")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_nv8tm")
 theme_override_styles/normal = SubResource("StyleBoxFlat_eauue")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nv8tm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kmjo7")
 text = "Options"
 
-[node name="Credits" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="Credits" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1488093087]
 visible = false
 layout_mode = 2
-theme_override_colors/font_hover_pressed_color = Color(0.168627, 0.156863, 0.254902, 1)
-theme_override_colors/font_hover_color = Color(0.168627, 0.156863, 0.254902, 1)
 theme_override_colors/font_color = Color(0.168627, 0.156863, 0.254902, 1)
 theme_override_colors/font_focus_color = Color(0.168627, 0.156863, 0.254902, 1)
 theme_override_colors/font_pressed_color = Color(0.168627, 0.156863, 0.254902, 1)
+theme_override_colors/font_hover_color = Color(0.168627, 0.156863, 0.254902, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.168627, 0.156863, 0.254902, 1)
 theme_override_fonts/font = ExtResource("2_p6v0c")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/hover = SubResource("StyleBoxFlat_kmjo7")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_nv8tm")
 theme_override_styles/normal = SubResource("StyleBoxFlat_eauue")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nv8tm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kmjo7")
 text = "Credits"
 
-[node name="Exit" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="Exit" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=118902683]
 layout_mode = 2
 theme = SubResource("Theme_pderx")
-theme_override_colors/font_hover_pressed_color = Color(0.168627, 0.156863, 0.254902, 1)
-theme_override_colors/font_hover_color = Color(0.168627, 0.156863, 0.254902, 1)
 theme_override_colors/font_color = Color(0.168627, 0.156863, 0.254902, 1)
 theme_override_colors/font_focus_color = Color(0.168627, 0.156863, 0.254902, 1)
 theme_override_colors/font_pressed_color = Color(0.168627, 0.156863, 0.254902, 1)
+theme_override_colors/font_hover_color = Color(0.168627, 0.156863, 0.254902, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.168627, 0.156863, 0.254902, 1)
 theme_override_fonts/font = ExtResource("2_p6v0c")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/hover = SubResource("StyleBoxFlat_kmjo7")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_nv8tm")
 theme_override_styles/normal = SubResource("StyleBoxFlat_eauue")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nv8tm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kmjo7")
 text = "Exit"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=516130629]
 stream = ExtResource("4_t5vrq")
 autoplay = true
 bus = &"BGM"
